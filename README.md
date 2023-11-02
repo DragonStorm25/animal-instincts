@@ -1,1 +1,1 @@
-# animal-instincts
+# Animal Instincts
