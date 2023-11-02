@@ -2,4 +2,4 @@
 
 ## Fall 2023
 
-Spooky-cute puzzle platformer with animal abilities.
+Animal Instincts is a spooky-cute cooperative puzzle platform game where each player uses their special abilities to escape an area together before time runs out.
