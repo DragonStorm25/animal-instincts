@@ -7,7 +7,9 @@ public class WebController : MonoBehaviour
     public SpringJoint web;
     public float stringStrength;
     public float curDistance;
+    public Color lineColor;
     private GameObject webAnchor;
+    private LineRenderer webVisual;
 
     // Start is called before the first frame update
     void Awake()
@@ -16,7 +18,11 @@ public class WebController : MonoBehaviour
         webAnchor = new GameObject("Web Anchor");
         webAnchor.AddComponent<Rigidbody>();
         webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        webAnchor.AddComponent<LineRenderer>();
         web.spring = 0;
+        LineRenderer lr = myLine.GetComponent();
+        lr.SetColors(lineColor, lineColor);
+        lr.SetWidth(0.1f, 0.1f);
     }
 
     // Update is called once per frame
