@@ -34,6 +34,9 @@ namespace Platformer.Mechanics
         public Health health;
         public DistanceJoint2D web;
         public bool controlEnabled = true;
+        
+        public string horiz_axis; 
+        public string jump_axis; 
 
         bool jump;
         Vector2 move;
@@ -59,10 +62,10 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
-                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
+                move.x = Input.GetAxis(horiz_axis);
+                if (jumpState == JumpState.Grounded && Input.GetButtonDown(jump_axis))
                     jumpState = JumpState.PrepareToJump;
-                else if (Input.GetButtonUp("Jump"))
+                else if (Input.GetButtonUp(horiz_axis))
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
