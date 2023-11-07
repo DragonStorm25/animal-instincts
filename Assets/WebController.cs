@@ -29,8 +29,9 @@ public class WebController : MonoBehaviour
             Debug.Log(worldPosition);
             RaycastHit hit;
             Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
-            if (hit && hit.transform.tag == "WebTarget")
+            if (hit.transform != null && hit.transform.tag == "WebTarget")
             {
+                webToggle = !webToggle;
                 if (webToggle)
                 {
                     webAnchor.transform.position = worldPosition;
@@ -41,7 +42,13 @@ public class WebController : MonoBehaviour
                 {
                     web.spring = 0;
                 }
-                webToggle = !webToggle;
+            }
+            else 
+            {
+                if (webToggle)
+                {
+                    webToggle = false;
+                }
             }
         }
     }
