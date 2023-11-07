@@ -22,23 +22,23 @@ public class WebController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
-            {
-                webToggle = !webToggle;
-                Vector3 mousePos = Input.mousePosition;
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-                worldPosition.z = 0;
-                Debug.Log(worldPosition);
+        {
+            webToggle = !webToggle;
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+            worldPosition.z = 0;
+            Debug.Log(worldPosition);
 
-                if (webToggle)
-                {
-                    webAnchor.transform.position = worldPosition;
-                    web.connectedBody = webAnchor.GetComponent<Rigidbody>();
-                    web.spring = 10;
-                }
-                else
-                {
-                    web.spring = 0;
-                }
+            if (webToggle)
+            {
+                webAnchor.transform.position = worldPosition;
+                web.connectedBody = webAnchor.GetComponent<Rigidbody>();
+                web.spring = 10;
             }
+            else
+            {
+                web.spring = 0;
+            }
+        }
     }
 }
