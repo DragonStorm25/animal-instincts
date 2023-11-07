@@ -26,7 +26,6 @@ public class WebController : MonoBehaviour
         webVisual.SetColors(lineColor, lineColor);
         webVisual.SetWidth(0.1f, 0.1f);
         isWebConnected = false;
-        webMovement = MoveDirection.NoMovement;
     }
 
     // Update is called once per frame
