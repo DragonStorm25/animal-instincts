@@ -55,7 +55,8 @@ public class WebController : MonoBehaviour
             }
         }
         float vertAxis = Input.GetAxis("Vertical");
-        curDistance += vertAxis * Time.deltaTime;
+        curDistance -= vertAxis * Time.deltaTime;
+        curDistance = Mathf.max(0, curDistance);
 
         Debug.Log(vertAxis);
         web.minDistance = curDistance;
