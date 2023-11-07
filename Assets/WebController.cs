@@ -12,7 +12,6 @@ public class WebController : MonoBehaviour
     private GameObject webAnchor;
     private LineRenderer webVisual;
     private bool isWebConnected;
-    private MoveDirection webMovement;
 
     // Start is called before the first frame update
     void Awake()
@@ -63,11 +62,5 @@ public class WebController : MonoBehaviour
         webVisual.SetPosition(0, transform.position);
         webVisual.SetPosition(1, webAnchor.transform.position);
         webVisual.forceRenderingOff = !isWebConnected;
-    }
-
-    enum MoveDirection {
-        Up,
-        Down,
-        NoMovement
     }
 }
