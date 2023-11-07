@@ -9,7 +9,7 @@ public class WebController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+        web = GetComponent<SpringJoint>();
     }
 
     // Update is called once per frame
