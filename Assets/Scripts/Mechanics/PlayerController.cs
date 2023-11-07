@@ -32,7 +32,7 @@ namespace Platformer.Mechanics
         /*internal new*/ public Collider2D collider2d;
         /*internal new*/ public AudioSource audioSource;
         public Health health;
-        public DistanceJoint2D web;
+        public SpringJoint2D web;
         public bool controlEnabled = true;
         
         public string horiz_axis; 
@@ -55,7 +55,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
-            web = GetComponent<DistanceJoint2D>();
+            web = GetComponent<SpringJoint2D>();
         }
 
         protected override void Update()
@@ -70,25 +70,6 @@ namespace Platformer.Mechanics
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
                 }
-
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    webToggle = !webToggle;
-                    Vector3 mousePos = Input.mousePosition;
-                    mousePos.z = Camera.main.nearClipPlane;
-                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-                    Debug.Log(worldPosition);
-
-                    if (webToggle)
-                    {
-                        web.connectedAnchor = worldPosition;
-                        web.distance = 3;
-                    }
-                    else
-                    {
-                        web.distance = Mathf.Infinity;
-                    }
-                }
             }
             else
             {
@@ -96,6 +77,25 @@ namespace Platformer.Mechanics
             }
             UpdateJumpState();
             base.Update();
+            
+            if (Input.GetButtonDown("Fire1"))
+            {
+                webToggle = !webToggle;
+                Vector3 mousePos = Input.mousePosition;
+                mousePos.z = Camera.main.nearClipPlane;
+                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+                Debug.Log(worldPosition);
+
+                if (webToggle)
+                {
+                    //web.connectedAnchor = worldPosition;
+                    //web.distance = 3;
+                }
+                else
+                {
+                    //web.distance = 1000000;
+                }
+            }
         }
 
         void UpdateJumpState()
