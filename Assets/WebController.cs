@@ -50,6 +50,7 @@ public class WebController : MonoBehaviour
             {
                 web.spring = 0;
                 web.damper = 0;
+                curDistance = 0;
                 isWebConnected = false;
             }
         }
