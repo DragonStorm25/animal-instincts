@@ -27,8 +27,9 @@ public class WebController : MonoBehaviour
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
             worldPosition.z = 0;
             Debug.Log(worldPosition);
+            RaycastHit hit;
             Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
-            if (hit.tag == "WebTarget")
+            if (hit && hit.transform.tag == "WebTarget")
             {
                 if (webToggle)
                 {
