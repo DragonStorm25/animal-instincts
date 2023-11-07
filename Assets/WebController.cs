@@ -6,6 +6,7 @@ public class WebController : MonoBehaviour
 {
     public SpringJoint web;
     private bool webToggle = false;
+    private GameObject webAnchor;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,13 +21,17 @@ public class WebController : MonoBehaviour
             {
                 webToggle = !webToggle;
                 Vector3 mousePos = Input.mousePosition;
-                mousePos.z = 0;
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+                worldPosition.z = 0;
                 Debug.Log(worldPosition);
 
                 if (webToggle)
                 {
-                    web.anchor = worldPosition;
+                    webAnchor = new GameObject();
+                    webAnchor.transform.position = worldPosition;
+                    webAnchor.AddComponent<Rigidbody>();
+                    webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                    web.connectedBody = webAnchor.GetComponent<Rigidbody>();
                     web.spring = 10;
                 }
                 else
