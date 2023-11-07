@@ -32,6 +32,7 @@ namespace Platformer.Mechanics
         /*internal new*/ public Collider2D collider2d;
         /*internal new*/ public AudioSource audioSource;
         public Health health;
+        public DistanceJoint2D web;
         public bool controlEnabled = true;
 
         bool jump;
@@ -51,6 +52,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            web = GetComponent<DistanceJoint2D>();
         }
 
         protected override void Update()
@@ -76,7 +78,7 @@ namespace Platformer.Mechanics
 
                     if (webToggle)
                     {
-                        
+
                     }
                 }
             }
