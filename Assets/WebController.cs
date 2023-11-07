@@ -5,6 +5,7 @@ using UnityEngine;
 public class WebController : MonoBehaviour
 {
     public SpringJoint web;
+    public float stringStrength;
     private GameObject webAnchor;
 
     // Start is called before the first frame update
@@ -31,7 +32,7 @@ public class WebController : MonoBehaviour
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody>();
-                web.spring = 10;
+                web.spring = stringStrength;
             }
             else
             {
