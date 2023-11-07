@@ -20,9 +20,9 @@ public class WebController : MonoBehaviour
         webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         webAnchor.AddComponent<LineRenderer>();
         web.spring = 0;
-        LineRenderer lr = myLine.GetComponent();
-        lr.SetColors(lineColor, lineColor);
-        lr.SetWidth(0.1f, 0.1f);
+        webVisual = webAnchor.GetComponent<LineRenderer>();
+        webVisual.SetColors(lineColor, lineColor);
+        webVisual.SetWidth(0.1f, 0.1f);
     }
 
     // Update is called once per frame
@@ -47,5 +47,7 @@ public class WebController : MonoBehaviour
             }
         }
         web.minDistance = curDistance;
+        webVisual.SetPosition(0, transform.position);
+        webVisual.SetPosition(1, webAnchor.transform.position);
     }
 }
