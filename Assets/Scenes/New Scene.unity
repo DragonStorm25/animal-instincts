@@ -392,6 +392,7 @@ MonoBehaviour:
   web: {fileID: 995654687}
   stringStrength: 5
   curDistance: 0
+  lineColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1 &1445120734
 GameObject:
   m_ObjectHideFlags: 0
