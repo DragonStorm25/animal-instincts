@@ -15,11 +15,12 @@ public class WebController2D : MonoBehaviour
     void Awake()
     {
         web = GetComponent<SpringJoint2D>();
+        web.distance = curDistance;
+        web.connectedBody = GetComponent<Rigidbody2D>();
         webAnchor = new GameObject("Web Anchor");
         webAnchor.AddComponent<Rigidbody2D>();
         webAnchor.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         webAnchor.AddComponent<LineRenderer>();
-        web.distance = curDistance;
         webVisual = webAnchor.GetComponent<LineRenderer>();
         webVisual.startColor = lineColor;
         webVisual.endColor = lineColor;
@@ -47,7 +48,7 @@ public class WebController2D : MonoBehaviour
             }
             else
             {
-                web.connectedBody = null;
+                web.connectedBody = GetComponent<Rigidbody2D>();
                 curDistance = 3;
                 isWebConnected = false;
             }
