@@ -90,6 +90,7 @@ namespace Platformer.Mechanics
                 {
                     //web.connectedAnchor = worldPosition;
                     //web.distance = 3;
+                    targetVelocity.x += 1;
                 }
                 else
                 {
