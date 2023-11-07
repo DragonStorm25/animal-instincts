@@ -19,7 +19,7 @@ public class WebController2D : MonoBehaviour
         webAnchor.AddComponent<Rigidbody2D>();
         webAnchor.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         webAnchor.AddComponent<LineRenderer>();
-        web.distance = 0;
+        web.distance = curDistance;
         webVisual = webAnchor.GetComponent<LineRenderer>();
         webVisual.startColor = lineColor;
         webVisual.endColor = lineColor;
@@ -38,7 +38,7 @@ public class WebController2D : MonoBehaviour
             worldPosition.z = 0;
             RaycastHit hit;
             Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
-            if (hit.transform != null && hit.transform.tag == "WebTarget")
+            if (!isWebConnected)
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();
@@ -47,8 +47,8 @@ public class WebController2D : MonoBehaviour
             }
             else
             {
-                web.distance = 0;
-                curDistance = 0;
+                web.connectedBody = null;
+                curDistance = 3;
                 isWebConnected = false;
             }
         }
@@ -56,7 +56,6 @@ public class WebController2D : MonoBehaviour
         curDistance -= vertAxis * Time.deltaTime;
         curDistance = Mathf.Max(0, curDistance);
 
-        Debug.Log(vertAxis);
         web.distance = curDistance;
         webVisual.SetPosition(0, transform.position);
         webVisual.SetPosition(1, webAnchor.transform.position);
