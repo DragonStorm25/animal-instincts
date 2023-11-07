@@ -78,7 +78,12 @@ namespace Platformer.Mechanics
 
                     if (webToggle)
                     {
-
+                        web.connectedAnchor = worldPosition;
+                        web.distance = 3;
+                    }
+                    else
+                    {
+                        web.distance = Mathf.Infinity;
                     }
                 }
             }
