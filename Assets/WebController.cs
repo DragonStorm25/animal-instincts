@@ -55,6 +55,10 @@ public class WebController : MonoBehaviour
                 isWebConnected = false;
             }
         }
+        float vertAxis = Input.GetAxis("Vertical");
+        curDistance += vertAxis * Time.deltaTime;
+
+        Debug.Log(vertAxis);
         web.minDistance = curDistance;
         webVisual.SetPosition(0, transform.position);
         webVisual.SetPosition(1, webAnchor.transform.position);
