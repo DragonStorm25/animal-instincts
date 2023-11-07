@@ -5,7 +5,6 @@ using UnityEngine;
 public class WebController : MonoBehaviour
 {
     public SpringJoint web;
-    private bool webToggle = false;
     private GameObject webAnchor;
 
     // Start is called before the first frame update
@@ -29,14 +28,6 @@ public class WebController : MonoBehaviour
             RaycastHit hit;
             Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
             if (hit.transform != null && hit.transform.tag == "WebTarget")
-            {
-                webToggle = true;
-            }
-            else 
-            {
-                webToggle = false;
-            }
-            if (webToggle)
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody>();
