@@ -10,6 +10,7 @@ public class WebController : MonoBehaviour
     public Color lineColor;
     private GameObject webAnchor;
     private LineRenderer webVisual;
+    private bool isWebConnected;
 
     // Start is called before the first frame update
     void Awake()
@@ -23,6 +24,7 @@ public class WebController : MonoBehaviour
         webVisual = webAnchor.GetComponent<LineRenderer>();
         webVisual.SetColors(lineColor, lineColor);
         webVisual.SetWidth(0.1f, 0.1f);
+        isWebConnected = false;
     }
 
     // Update is called once per frame
@@ -40,14 +42,17 @@ public class WebController : MonoBehaviour
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody>();
                 web.spring = stringStrength;
+                isWebConnected = true;
             }
             else
             {
                 web.spring = 0;
+                isWebConnected = false;
             }
         }
         web.minDistance = curDistance;
         webVisual.SetPosition(0, transform.position);
         webVisual.SetPosition(1, webAnchor.transform.position);
+        webVisual.forceRenderingOff = !isWebConnected;
     }
 }
