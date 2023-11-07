@@ -23,8 +23,10 @@ public class WebController : MonoBehaviour
         webAnchor.AddComponent<LineRenderer>();
         web.spring = 0;
         webVisual = webAnchor.GetComponent<LineRenderer>();
-        webVisual.SetColors(lineColor, lineColor);
-        webVisual.SetWidth(0.1f, 0.1f);
+        webVisual.startColor = lineColor;
+        webVisual.endColor = lineColor;
+        webVisual.startWidth = 0.1f;
+        webVisual.endWidth = 0.1f;
         isWebConnected = false;
     }
 
