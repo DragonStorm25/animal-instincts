@@ -6,6 +6,7 @@ public class WebController : MonoBehaviour
 {
     public SpringJoint web;
     public float stringStrength;
+    public float stringDrag;
     public float curDistance;
     public Color lineColor;
     private GameObject webAnchor;
@@ -42,11 +43,13 @@ public class WebController : MonoBehaviour
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody>();
                 web.spring = stringStrength;
+                web.damper = stringDrag;
                 isWebConnected = true;
             }
             else
             {
                 web.spring = 0;
+                web.damper = 0;
                 isWebConnected = false;
             }
         }
