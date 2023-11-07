@@ -1238,7 +1238,7 @@ SpringJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
+  m_AutoConfigureDistance: 0
   m_Distance: 7.966557
   m_DampingRatio: 0
   m_Frequency: 1
@@ -1254,3 +1254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81068d7a888f44c31b3c4f1f75a05bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  web: {fileID: 0}
+  curDistance: 0
+  lineColor: {r: 0, g: 0, b: 0, a: 0}
