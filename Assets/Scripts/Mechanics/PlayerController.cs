@@ -42,6 +42,8 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
+        private bool webToggle = false;
+
         void Awake()
         {
             health = GetComponent<Health>();
@@ -62,6 +64,15 @@ namespace Platformer.Mechanics
                 {
                     stopJump = true;
                     Schedule<PlayerStopJump>().player = this;
+                }
+
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    webToggle = !webToggle;
+                    Vector3 mousePos = Input.mousePosition;
+                    mousePos.z = Camera.main.nearClipPlane;
+                    Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+                    Debug.Log(worldPosition);
                 }
             }
             else
