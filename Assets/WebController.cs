@@ -12,7 +12,7 @@ public class WebController : MonoBehaviour
     void Awake()
     {
         web = GetComponent<SpringJoint>();
-        webAnchor = new GameObject();
+        webAnchor = new GameObject("Web Anchor");
         webAnchor.AddComponent<Rigidbody>();
         webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
