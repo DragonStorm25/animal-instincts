@@ -12,6 +12,9 @@ public class WebController : MonoBehaviour
     void Awake()
     {
         web = GetComponent<SpringJoint>();
+        webAnchor = new GameObject();
+        webAnchor.AddComponent<Rigidbody>();
+        webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     // Update is called once per frame
@@ -27,10 +30,7 @@ public class WebController : MonoBehaviour
 
                 if (webToggle)
                 {
-                    webAnchor = new GameObject();
                     webAnchor.transform.position = worldPosition;
-                    webAnchor.AddComponent<Rigidbody>();
-                    webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                     web.connectedBody = webAnchor.GetComponent<Rigidbody>();
                     web.spring = 10;
                 }
