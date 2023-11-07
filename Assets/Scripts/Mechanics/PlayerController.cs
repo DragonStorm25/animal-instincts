@@ -73,6 +73,11 @@ namespace Platformer.Mechanics
                     mousePos.z = Camera.main.nearClipPlane;
                     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
                     Debug.Log(worldPosition);
+
+                    if (webToggle)
+                    {
+                        
+                    }
                 }
             }
             else
