@@ -30,24 +30,21 @@ public class WebController : MonoBehaviour
             Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
             if (hit.transform != null && hit.transform.tag == "WebTarget")
             {
-                webToggle = !webToggle;
-                if (webToggle)
-                {
-                    webAnchor.transform.position = worldPosition;
-                    web.connectedBody = webAnchor.GetComponent<Rigidbody>();
-                    web.spring = 10;
-                }
-                else
-                {
-                    web.spring = 0;
-                }
+                webToggle = true;
             }
             else 
             {
-                if (webToggle)
-                {
-                    webToggle = false;
-                }
+                webToggle = false;
+            }
+            if (webToggle)
+            {
+                webAnchor.transform.position = worldPosition;
+                web.connectedBody = webAnchor.GetComponent<Rigidbody>();
+                web.spring = 10;
+            }
+            else
+            {
+                web.spring = 0;
             }
         }
     }
