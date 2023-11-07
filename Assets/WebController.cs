@@ -15,6 +15,7 @@ public class WebController : MonoBehaviour
         webAnchor = new GameObject("Web Anchor");
         webAnchor.AddComponent<Rigidbody>();
         webAnchor.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        web.spring = 0;
     }
 
     // Update is called once per frame
