@@ -5,7 +5,6 @@ using UnityEngine;
 public class WebController : MonoBehaviour
 {
     public SpringJoint web;
-    private bool webToggle = false;
     private GameObject webAnchor;
 
     // Start is called before the first frame update
@@ -22,23 +21,22 @@ public class WebController : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
+        {
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+            worldPosition.z = 0;
+            RaycastHit hit;
+            Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
+            if (hit.transform != null && hit.transform.tag == "WebTarget")
             {
-                webToggle = !webToggle;
-                Vector3 mousePos = Input.mousePosition;
-                Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-                worldPosition.z = 0;
-                Debug.Log(worldPosition);
-
-                if (webToggle)
-                {
-                    webAnchor.transform.position = worldPosition;
-                    web.connectedBody = webAnchor.GetComponent<Rigidbody>();
-                    web.spring = 10;
-                }
-                else
-                {
-                    web.spring = 0;
-                }
+                webAnchor.transform.position = worldPosition;
+                web.connectedBody = webAnchor.GetComponent<Rigidbody>();
+                web.spring = 10;
             }
+            else
+            {
+                web.spring = 0;
+            }
+        }
     }
 }
