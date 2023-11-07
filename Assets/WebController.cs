@@ -6,6 +6,7 @@ public class WebController : MonoBehaviour
 {
     public SpringJoint web;
     public float stringStrength;
+    public float curDistance;
     private GameObject webAnchor;
 
     // Start is called before the first frame update
@@ -39,5 +40,6 @@ public class WebController : MonoBehaviour
                 web.spring = 0;
             }
         }
+        web.minDistance = curDistance;
     }
 }
