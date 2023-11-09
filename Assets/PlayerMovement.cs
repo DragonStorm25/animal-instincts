@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         web = GetComponent<WebController2D>();
-        Debug.Log(web.curDistance);
+   
     }
 
     // Update is called once per frame
