@@ -62,4 +62,8 @@ public class WebController2D : MonoBehaviour
         webVisual.SetPosition(1, webAnchor.transform.position);
         webVisual.forceRenderingOff = !isWebConnected;
     }
+    public bool isConnected()
+    {
+        return isWebConnected;
+    }
 }
