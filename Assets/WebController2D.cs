@@ -37,16 +37,11 @@ public class WebController2D : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
             worldPosition.z = 0;
-            RaycastHit hit;
-           // Physics.Raycast(worldPosition, Vector3.up, out hit);
-            //  hit = Physics2D.Raycast(mousePos, Vector3.one, 100);
-            //Debug.Log(mousePos);
-            //Debug.DrawRay(mousePos, mousePos + Vector3.one * 100);
-            //Debug.Log("shoot");
-            // Debug.Log(hit.transform.name);
-     
+            
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+    
 
-            if (!isWebConnected)
+            if (!isWebConnected && hit.collider != null && hit.collider.gameObject.tag == "WebTarget")
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();
