@@ -37,13 +37,16 @@ public class WebController2D : MonoBehaviour
             Vector3 mousePos = Input.mousePosition;
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
             worldPosition.z = 0;
-            RaycastHit2D hit;
-            //Physics.Raycast(worldPosition - new Vector3(0, 0, 10), Vector3.forward, out hit);
-          //  hit = Physics2D.Raycast(mousePos, Vector3.one, 100);
+            RaycastHit hit;
+           // Physics.Raycast(worldPosition, Vector3.up, out hit);
+            //  hit = Physics2D.Raycast(mousePos, Vector3.one, 100);
             //Debug.Log(mousePos);
             //Debug.DrawRay(mousePos, mousePos + Vector3.one * 100);
-            //Debug.Log(hit.transform.name);
-            if (!isWebConnected )
+            //Debug.Log("shoot");
+            // Debug.Log(hit.transform.name);
+     
+
+            if (!isWebConnected)
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();
@@ -66,6 +69,7 @@ public class WebController2D : MonoBehaviour
         webVisual.SetPosition(1, webAnchor.transform.position);
         webVisual.forceRenderingOff = !isWebConnected;
     }
+    
     public bool isConnected()
     {
         return isWebConnected;

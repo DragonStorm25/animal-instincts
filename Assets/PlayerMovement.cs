@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxColl;
     private WebController2D web;
+    public bool isSpider;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
@@ -16,19 +17,33 @@ public class PlayerMovement : MonoBehaviour
     {
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        web = GetComponent<WebController2D>();
+        if (isSpider)
+        {
+            web = GetComponent<WebController2D>();
+        }
    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!web.isConnected())
+        if (!isSpider || !web.isConnected())
         {
-            float dirX = Input.GetAxisRaw("Horizontal");
+            float dirX;
+            float jump;
+            if (isSpider)
+            {
+                dirX = Input.GetAxisRaw("Horizontal");
+                jump = Input.GetAxisRaw("Jump");
+            }
+            else
+            {
+                dirX = Input.GetAxisRaw("Horizontal2");
+                jump = Input.GetAxisRaw("Jump2");
+            }
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-            if (Input.GetKeyDown("space") && IsGrounded())
+            if ( jump > 0 && IsGrounded())
             {
                 rb.velocity = new Vector3(0, jumpForce, 0);
             }
