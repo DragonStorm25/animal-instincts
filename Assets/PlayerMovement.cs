@@ -29,19 +29,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX;
-        float jump;
-        if (hasWeb)
-        {
-            dirX = Input.GetAxisRaw("Horizontal");
-            jump = Input.GetAxisRaw("Jump");
-        }
-        else
-        {
-            dirX = Input.GetAxisRaw("Horizontal2");
-            jump = Input.GetAxisRaw("Jump2");
-        }
-
         float appliedJumpForce = tryJump > 0 && IsGrounded() ? jumpForce : 0;
         rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
     }
