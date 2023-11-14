@@ -11,6 +11,7 @@ public class WebController2D : MonoBehaviour
     private GameObject webAnchor;
     private LineRenderer webVisual;
     private bool isWebConnected;
+    private float moveDirection;
 
     // Start is called before the first frame update
     void Awake()
@@ -56,8 +57,7 @@ public class WebController2D : MonoBehaviour
                 isWebConnected = false;
             }
         }
-        float vertAxis = Input.GetAxis("Vertical");
-        curDistance -= vertAxis * Time.deltaTime;
+        curDistance += moveDirection * Time.deltaTime;
         curDistance = Mathf.Max(0, curDistance);
 
         web.distance = curDistance;
@@ -73,6 +73,6 @@ public class WebController2D : MonoBehaviour
 
     private void OnWebCrawl(InputValue movementValue)
     {
-        Debug.Log(movementValue.Get<float>());
+        moveDirection = movementValue.Get<float>();
     }
 }
