@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxColl;
     private WebController2D web;
-    public bool isSpider;
+    public bool hasWeb;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        if (isSpider)
+        if (hasWeb)
         {
             web = GetComponent<WebController2D>();
         }
@@ -26,24 +26,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isSpider || !web.isConnected())
+        float dirX;
+        float jump;
+        if (hasWeb)
         {
-            float dirX;
-            float jump;
-            if (isSpider)
-            {
-                dirX = Input.GetAxisRaw("Horizontal");
-                jump = Input.GetAxisRaw("Jump");
-            }
-            else
-            {
-                dirX = Input.GetAxisRaw("Horizontal2");
-                jump = Input.GetAxisRaw("Jump2");
-            }
-
-            float appliedJumpForce = jump > 0 && IsGrounded() ? jumpForce : 0;
-            rb.AddForce(new Vector2(dirX * moveForce, appliedJumpForce));
+            dirX = Input.GetAxisRaw("Horizontal");
+            jump = Input.GetAxisRaw("Jump");
         }
+        else
+        {
+            dirX = Input.GetAxisRaw("Horizontal2");
+            jump = Input.GetAxisRaw("Jump2");
+        }
+
+        float appliedJumpForce = jump > 0 && IsGrounded() ? jumpForce : 0;
+        rb.AddForce(new Vector2(dirX * moveForce, appliedJumpForce));
     }
 
     private bool IsGrounded()
