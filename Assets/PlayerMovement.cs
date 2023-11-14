@@ -51,4 +51,14 @@ public class PlayerMovement : MonoBehaviour
     {
         return rb.velocity.y == 0;
     }
+
+    struct Animal {
+        public int horizontalForceMag;
+        public int jumpForceMag;
+
+        public Animal(int horizontalForce, int jumpForce){
+            horizontalForceMag = horizontalForce;
+            jumpForceMag = jumpForce;
+        }
+    }
 }
