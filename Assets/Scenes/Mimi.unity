@@ -2001,6 +2001,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
+        type: 3}
+      propertyPath: web
+      value: 
+      objectReference: {fileID: 7607637193504601422}
     - target: {fileID: 7607637191689336440, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
       propertyPath: m_RootOrder
@@ -2058,3 +2063,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57017986c9337406ea0dd698f8c29763, type: 3}
+--- !u!231 &7607637193504601422 stripped
+SpringJoint2D:
+  m_CorrespondingSourceObject: {fileID: 7607637191689336442, guid: 57017986c9337406ea0dd698f8c29763,
+    type: 3}
+  m_PrefabInstance: {fileID: 7607637193504601421}
+  m_PrefabAsset: {fileID: 0}

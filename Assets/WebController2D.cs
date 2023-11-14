@@ -16,7 +16,6 @@ public class WebController2D : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        web = GetComponent<SpringJoint2D>();
         web.distance = curDistance;
         web.connectedBody = GetComponent<Rigidbody2D>();
         webAnchor = new GameObject("Web Anchor");
