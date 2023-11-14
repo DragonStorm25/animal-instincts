@@ -41,12 +41,9 @@ public class PlayerMovement : MonoBehaviour
                 dirX = Input.GetAxisRaw("Horizontal2");
                 jump = Input.GetAxisRaw("Jump2");
             }
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-            if ( jump > 0 && IsGrounded())
-            {
-                rb.velocity = new Vector3(0, jumpForce, 0);
-            }
+            float appliedJumpForce = jump > 0 && IsGrounded() ? jumpForce : 0;
+            rb.AddForce(new Vector2(dirX * moveSpeed, appliedJumpForce));
         }
     }
 
