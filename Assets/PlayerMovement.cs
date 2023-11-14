@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float appliedJumpForce = tryJump > 0 && IsGrounded() ? jumpForce : 0;
+        if (tryJump > 0) 
+        {
+            tryJump = 0;
+        }
         rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
     }
 
