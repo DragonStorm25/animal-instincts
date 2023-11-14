@@ -2045,7 +2045,12 @@ PrefabInstance:
     - target: {fileID: 5184799751529217938, guid: 56ba37501feee154785556a4e67cbacc,
         type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184799751529217938, guid: 56ba37501feee154785556a4e67cbacc,
+        type: 3}
+      propertyPath: moveForce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5184799751529217939, guid: 56ba37501feee154785556a4e67cbacc,
         type: 3}
@@ -2106,6 +2111,6 @@ MonoBehaviour:
     m_ActionName: Player1/Jump[/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 1de0724f-6bbc-4913-82ef-6b154b45000a
+  m_DefaultActionMap: Player1
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
