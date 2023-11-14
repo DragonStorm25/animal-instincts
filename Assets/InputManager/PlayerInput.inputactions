@@ -6,13 +6,13 @@
             "id": "1de0724f-6bbc-4913-82ef-6b154b45000a",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "Value",
+                    "name": "Move",
+                    "type": "PassThrough",
                     "id": "bbd6050a-e174-4c24-af41-f480f935979c",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Jump",
@@ -32,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -43,7 +43,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -73,21 +73,21 @@
         },
         {
             "name": "Player2",
-            "id": "258896b9-4359-48ab-86b0-39f8f17817bd",
+            "id": "f6f72cb3-8791-4c52-aebd-5b61f577c8db",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "Value",
-                    "id": "ac7d2ad2-f310-4ca9-9b56-c42d7bb8f20d",
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "e3db98a8-d3a6-4947-98a4-5b556f2f05d7",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "e86d2333-4e23-4664-b28b-3007ae9f31cb",
+                    "id": "c59bb84a-9e31-420d-9017-aa2c25b5479c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -97,40 +97,40 @@
             "bindings": [
                 {
                     "name": "1D Axis",
-                    "id": "dcf39936-db6e-4dc4-be08-f60431a793db",
+                    "id": "cf97058f-8a99-488d-a626-1d18edd9073f",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "negative",
-                    "id": "6ed1f173-66a7-4e74-9f8e-5a987f7a9de0",
+                    "id": "465e2953-e252-452f-b830-36fd2bfd8a76",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "positive",
-                    "id": "39477f1f-f139-4b24-ad48-b5bf1937b77d",
+                    "id": "85e7c017-ad00-4a5c-a851-65cb70194c87",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Movement",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "a2000b36-8ddf-4a95-9b44-a69df156c101",
+                    "id": "2278d5fc-f392-4086-9d3f-b4518780ef92",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",

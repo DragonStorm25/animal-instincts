@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         return rb.velocity.y == 0;
     }
 
-    private void OnMovement(InputValue movementValue) 
+    private void OnMove(InputValue movementValue) 
     {
         movementX = movementValue.Get<float>();
     }
