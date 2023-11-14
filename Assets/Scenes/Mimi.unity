@@ -1207,8 +1207,8 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: 258896b9-4359-48ab-86b0-39f8f17817bd
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player2
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1061318328
@@ -2031,6 +2031,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5184799751529217938, guid: 56ba37501feee154785556a4e67cbacc,
+        type: 3}
+      propertyPath: hasWeb
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5184799751529217938, guid: 56ba37501feee154785556a4e67cbacc,
         type: 3}

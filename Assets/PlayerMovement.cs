@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxColl;
     private WebController2D web;
     private float movementX;
+    private float tryJump;
     public bool hasWeb;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             jump = Input.GetAxisRaw("Jump2");
         }
 
-        float appliedJumpForce = jump > 0 && IsGrounded() ? jumpForce : 0;
+        float appliedJumpForce = tryJump > 0 && IsGrounded() ? jumpForce : 0;
         rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
     }
 
@@ -53,5 +54,10 @@ public class PlayerMovement : MonoBehaviour
     private void OnMovement(InputValue movementValue) 
     {
         movementX = movementValue.Get<float>();
+    }
+
+    private void OnJump(InputValue jumpValue)
+    {
+        tryJump = jumpValue.Get<float>();
     }
 }
