@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WebController2D : MonoBehaviour
 {
@@ -68,5 +69,10 @@ public class WebController2D : MonoBehaviour
     public bool isConnected()
     {
         return isWebConnected;
+    }
+
+    private void OnWebCrawl(InputValue movementValue)
+    {
+        Debug.Log(movementValue.Get<float>());
     }
 }

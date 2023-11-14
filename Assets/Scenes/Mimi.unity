@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: f6f72cb3-8791-4c52-aebd-5b61f577c8db
+  m_DefaultActionMap: 1de0724f-6bbc-4913-82ef-6b154b45000a
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1061318328
@@ -2111,6 +2111,6 @@ MonoBehaviour:
     m_ActionName: Player1/Jump[/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player1
+  m_DefaultActionMap: f6f72cb3-8791-4c52-aebd-5b61f577c8db
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

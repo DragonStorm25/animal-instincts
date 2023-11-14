@@ -2,7 +2,7 @@
     "name": "PlayerInput",
     "maps": [
         {
-            "name": "Player1",
+            "name": "Cheetah",
             "id": "1de0724f-6bbc-4913-82ef-6b154b45000a",
             "actions": [
                 {
@@ -72,7 +72,7 @@
             ]
         },
         {
-            "name": "Player2",
+            "name": "Spider",
             "id": "f6f72cb3-8791-4c52-aebd-5b61f577c8db",
             "actions": [
                 {
@@ -88,6 +88,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "c59bb84a-9e31-420d-9017-aa2c25b5479c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WebCrawl",
+                    "type": "Button",
+                    "id": "d6f0605b-1ebb-4ae3-8b2e-57b564c1ca3d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -138,6 +147,39 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "d0b31aa2-e247-43ca-80e3-74d59b2505f1",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WebCrawl",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "3c2f513e-42a6-40c5-8aa6-9a2e415ccc3b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WebCrawl",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "df5cc38a-1d92-42bd-af95-79094e2c360a",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WebCrawl",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
