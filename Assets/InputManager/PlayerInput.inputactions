@@ -95,12 +95,12 @@
                 },
                 {
                     "name": "WebCrawl",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "d6f0605b-1ebb-4ae3-8b2e-57b564c1ca3d",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
