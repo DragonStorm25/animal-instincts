@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D boxColl;
     private WebController2D web;
+    private float movementX;
     public bool hasWeb;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
@@ -40,11 +42,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float appliedJumpForce = jump > 0 && IsGrounded() ? jumpForce : 0;
-        rb.AddForce(new Vector2(dirX * moveForce, appliedJumpForce));
+        rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
     }
 
     private bool IsGrounded()
     {
         return rb.velocity.y == 0;
+    }
+
+    private void OnMovement(InputValue movementValue) 
+    {
+        float movementX = movementValue.Get<float>();
+        Debug.Log(movementValue);
     }
 }
