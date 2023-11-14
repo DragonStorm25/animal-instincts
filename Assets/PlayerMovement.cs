@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D boxColl;
     private WebController2D web;
     public bool isSpider;
-    [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
