@@ -52,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMovement(InputValue movementValue) 
     {
-        float movementX = movementValue.Get<float>();
-        Debug.Log(movementValue);
+        movementX = movementValue.Get<float>();
     }
 }
