@@ -12,6 +12,7 @@ public class WebController2D : MonoBehaviour
     private LineRenderer webVisual;
     private bool isWebConnected;
     private float moveDirection;
+    [SerializeField] private float maxWebDistance = 3f;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,6 +32,7 @@ public class WebController2D : MonoBehaviour
         webVisual.material = whiteDiffuseMat;
         webVisual.material.color = lineColor;
         isWebConnected = false;
+     
     }
 
     // Update is called once per frame
@@ -43,9 +45,10 @@ public class WebController2D : MonoBehaviour
             worldPosition.z = 0;
             
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-    
+            float distance = Vector3.Distance(worldPosition, transform.position);
+            Debug.Log("distance spider-click : " + distance);
 
-            if (hit.collider != null && hit.collider.gameObject.tag == "WebTarget")
+            if (hit.collider != null && hit.collider.gameObject.tag == "WebTarget" && distance <= maxWebDistance)
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();

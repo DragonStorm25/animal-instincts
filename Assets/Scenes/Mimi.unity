@@ -2121,6 +2121,11 @@ PrefabInstance:
       propertyPath: web
       value: 
       objectReference: {fileID: 7607637193504601422}
+    - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
+        type: 3}
+      propertyPath: maxWebDistance
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7607637191689336440, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
       propertyPath: m_RootOrder
