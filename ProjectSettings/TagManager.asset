@@ -6,6 +6,8 @@ TagManager:
   tags:
   - TutorialRequirement
   - WebTarget
+  - Key
+  - Door
   layers:
   - Default
   - TransparentFX

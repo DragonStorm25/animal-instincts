@@ -38,5 +38,13 @@ public class CollectKey : MonoBehaviour
            
         }
         
+        if(other.tag == "Door")
+        {
+            //use keys 
+            other.gameObject.GetComponent<UnlockDoor>().unlock(nkeys);
+            //reset keys
+            nkeys = 0;
+      
+        }
     }
 }
