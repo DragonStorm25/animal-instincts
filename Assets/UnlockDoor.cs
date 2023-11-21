@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UnlockDoor : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class UnlockDoor : MonoBehaviour
         {
             //Open the door when the number of keys is met
             this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+            SceneManager.LoadScene("TestStage");
         }
     }
 

@@ -29,10 +29,12 @@ public class CollectKey : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Collided");
         //collide with a player + hasn't been picked up
         if (other.tag == "Key")
         {
             nkeys += 1; //collect the key
+            Debug.Log("Found Key");
             Destroy(other.gameObject);
             //keysText.text = "Keys: " + nkeys; 
            
