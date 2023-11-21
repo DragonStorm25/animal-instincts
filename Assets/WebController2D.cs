@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WebController2D : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class WebController2D : MonoBehaviour
     private GameObject webAnchor;
     private LineRenderer webVisual;
     private bool isWebConnected;
+    private float moveDirection;
+    [SerializeField] private float maxWebDistance = 3f;
 
     // Start is called before the first frame update
     void Awake()
     {
-        web = GetComponent<SpringJoint2D>();
         web.distance = curDistance;
         web.connectedBody = GetComponent<Rigidbody2D>();
         webAnchor = new GameObject("Web Anchor");
@@ -26,7 +28,11 @@ public class WebController2D : MonoBehaviour
         webVisual.endColor = lineColor;
         webVisual.startWidth = 0.1f;
         webVisual.endWidth = 0.1f;
+        Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
+        webVisual.material = whiteDiffuseMat;
+        webVisual.material.color = lineColor;
         isWebConnected = false;
+     
     }
 
     // Update is called once per frame
@@ -39,9 +45,10 @@ public class WebController2D : MonoBehaviour
             worldPosition.z = 0;
             
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-    
+            float distance = Vector3.Distance(worldPosition, transform.position);
+            Debug.Log("distance spider-click : " + distance);
 
-            if (!isWebConnected && hit.collider != null && hit.collider.gameObject.tag == "WebTarget")
+            if (hit.collider != null && hit.collider.gameObject.tag == "WebTarget" && distance <= maxWebDistance)
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();
@@ -55,8 +62,7 @@ public class WebController2D : MonoBehaviour
                 isWebConnected = false;
             }
         }
-        float vertAxis = Input.GetAxis("Vertical");
-        curDistance -= vertAxis * Time.deltaTime;
+        curDistance += moveDirection * Time.deltaTime;
         curDistance = Mathf.Max(0, curDistance);
 
         web.distance = curDistance;
@@ -68,5 +74,10 @@ public class WebController2D : MonoBehaviour
     public bool isConnected()
     {
         return isWebConnected;
+    }
+
+    private void OnWebCrawl(InputValue movementValue)
+    {
+        moveDirection = movementValue.Get<float>();
     }
 }

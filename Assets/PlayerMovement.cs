@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D boxColl;
     private WebController2D web;
-    public bool isSpider;
-    [SerializeField] private LayerMask jumpableGround;
-    [SerializeField] private float moveSpeed = 7f;
+    private float movementX;
+    private float tryJump;
+    public bool hasWeb;
+    [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
 
     // Start is called before the first frame update
@@ -17,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         boxColl = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
-        if (isSpider)
+        if (hasWeb)
         {
             web = GetComponent<WebController2D>();
         }
@@ -27,31 +29,26 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isSpider || !web.isConnected())
+        float appliedJumpForce = tryJump > 0 && IsGrounded() ? jumpForce : 0;
+        if (tryJump > 0) 
         {
-            float dirX;
-            float jump;
-            if (isSpider)
-            {
-                dirX = Input.GetAxisRaw("Horizontal");
-                jump = Input.GetAxisRaw("Jump");
-            }
-            else
-            {
-                dirX = Input.GetAxisRaw("Horizontal2");
-                jump = Input.GetAxisRaw("Jump2");
-            }
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
-            if ( jump > 0 && IsGrounded())
-            {
-                rb.velocity = new Vector3(0, jumpForce, 0);
-            }
+            tryJump = 0;
         }
+        rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
     }
 
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(boxColl.bounds.center, boxColl.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        return rb.velocity.y == 0;
+    }
+
+    private void OnMove(InputValue movementValue) 
+    {
+        movementX = movementValue.Get<float>();
+    }
+
+    private void OnJump(InputValue jumpValue)
+    {
+        tryJump = jumpValue.Get<float>();
     }
 }
