@@ -623,8 +623,8 @@ Camera:
   m_GameObject: {fileID: 403630833}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.33962262, g: 0.17213461, b: 0.16500534, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1093,8 +1093,8 @@ Camera:
   m_GameObject: {fileID: 631716715}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.31821704, g: 0.19215688, b: 0.4745098, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1162,8 +1162,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0044445, y: 0.6388889}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1215,9 +1215,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224,
-    type: 3}
-  m_Color: {r: 1, g: 0.38439336, b: 0.2584905, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 225644cb2868539fb8882666a6292ba6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2264,13 +2263,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2730185
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9796231
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.64
+      value: 11.0342
       objectReference: {fileID: 0}
     - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: -1.3446
       objectReference: {fileID: 0}
     - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
@@ -2311,6 +2320,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369257838751195893, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1856edc08e08339d6b96584b7a2f9434,
+        type: 3}
+    - target: {fileID: 5369257838751195893, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369257838751195893, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369257838751195893, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 191af4866458147f9bfa6de373264fc2, type: 3}
