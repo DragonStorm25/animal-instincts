@@ -156,7 +156,7 @@ Tilemap:
   m_TileColorArray: []
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.42745098, g: 0.42745098, b: 0.42745098, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
   m_Size: {x: 0, y: 0, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -224,6 +224,7 @@ MonoBehaviour:
   web: {fileID: 0}
   curDistance: 3
   lineColor: {r: 0, g: 0, b: 0, a: 0}
+  maxWebDistance: 3
 --- !u!231 &7607637191689336442
 SpringJoint2D:
   m_ObjectHideFlags: 0
