@@ -63,8 +63,10 @@ public class WebController2D : MonoBehaviour
                 isWebConnected = false;
             }
         }
-        curDistance += moveDirection * Time.deltaTime;
-        curDistance = Mathf.Max(0, curDistance);
+        if(isWebConnected) {    
+            curDistance += moveDirection * Time.deltaTime;
+            curDistance = Mathf.Max(0, curDistance);
+        }
 
         web.distance = curDistance;
         webVisual.SetPosition(0, transform.position);
