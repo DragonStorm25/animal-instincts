@@ -8,6 +8,7 @@ public class WebController2D : MonoBehaviour
     public SpringJoint2D web;
     public float curDistance;
     public Color lineColor;
+    public Camera camera;
     private GameObject webAnchor;
     private LineRenderer webVisual;
     private bool isWebConnected;
@@ -41,7 +42,7 @@ public class WebController2D : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Vector3 mousePos = Input.mousePosition;
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector3 worldPosition = camera.ScreenToWorldPoint(mousePos);
             worldPosition.z = 0;
             
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
