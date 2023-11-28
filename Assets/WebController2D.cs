@@ -45,7 +45,7 @@ public class WebController2D : MonoBehaviour
             Vector3 worldPosition = camera.ScreenToWorldPoint(mousePos);
             worldPosition.z = 0;
             
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
             float distance = Vector3.Distance(worldPosition, transform.position);
             Debug.Log("distance spider-click : " + distance);
 
