@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class WebController2D : MonoBehaviour
 {
     public SpringJoint2D web;
-    public float curDistance;
+    public float currentLength;
     public Color lineColor;
     public Camera camera;
     private GameObject webAnchor;
@@ -18,7 +18,7 @@ public class WebController2D : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        web.distance = curDistance;
+        web.distance = currentLength;
         web.connectedBody = GetComponent<Rigidbody2D>();
         webAnchor = new GameObject("Web Anchor");
         webAnchor.AddComponent<Rigidbody2D>();
@@ -53,22 +53,22 @@ public class WebController2D : MonoBehaviour
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();
-                web.distance = curDistance;
+                web.distance = currentLength;
                 isWebConnected = true;
             }
             else
             {
                 web.connectedBody = GetComponent<Rigidbody2D>();
-                curDistance = 3;
+                currentLength = 3;
                 isWebConnected = false;
             }
         }
         if(isWebConnected) {    
-            curDistance += moveDirection * Time.deltaTime;
-            curDistance = Mathf.Max(0, curDistance);
+            currentLength += moveDirection * Time.deltaTime;
+            currentLength = Mathf.Max(0, currentLength);
         }
 
-        web.distance = curDistance;
+        web.distance = currentLength;
         webVisual.SetPosition(0, transform.position);
         webVisual.SetPosition(1, webAnchor.transform.position);
         webVisual.forceRenderingOff = !isWebConnected;
