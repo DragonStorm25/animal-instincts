@@ -13,7 +13,7 @@ public class WebController2D : MonoBehaviour
     private LineRenderer webVisual;
     private bool isWebConnected;
     private float moveDirection;
-    [SerializeField] private float maxWebDistance = 3f;
+    [SerializeField] private float maxWebLength = 3f;
 
     // Start is called before the first frame update
     void Awake()
@@ -49,7 +49,7 @@ public class WebController2D : MonoBehaviour
             float distance = Vector3.Distance(worldPosition, transform.position);
             Debug.Log("distance spider-click : " + distance);
 
-            if (hit.collider != null && hit.collider.gameObject.tag == "WebTarget" && distance <= maxWebDistance)
+            if (hit.collider != null && hit.collider.gameObject.tag == "WebTarget" && distance <= maxWebLength)
             {
                 webAnchor.transform.position = worldPosition;
                 web.connectedBody = webAnchor.GetComponent<Rigidbody2D>();
