@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float movementX;
     private float tryJump;
     public bool hasWeb;
+    private SpriteRenderer sprite;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
 
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         {
             web = GetComponent<WebController2D>();
         }
-   
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -45,6 +46,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue movementValue) 
     {
         movementX = movementValue.Get<float>();
+        if (movementX > 0)
+        {
+            sprite.flipX = false;
+        }
+        else if (movementX < 0)
+        {
+            sprite.flipX = true;
+        }
     }
 
     private void OnJump(InputValue jumpValue)
