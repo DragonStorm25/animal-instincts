@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private WebController2D web;
     private float movementX;
     private float tryJump;
+    private bool isGrounded = false;
     public bool hasWeb;
     private SpriteRenderer sprite;
     [SerializeField] private float moveForce = 7f;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float appliedJumpForce = tryJump > 0 && IsGrounded() ? jumpForce : 0;
+        float appliedJumpForce = tryJump > 0 && CheckGrounded() ? jumpForce : 0;
         if (tryJump > 0) 
         {
             tryJump = 0;
@@ -38,9 +39,9 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
     }
 
-    private bool IsGrounded()
+    private bool CheckGrounded()
     {
-        return rb.velocity.y == 0;
+        return isGrounded || Mathf.Abs(rb.velocity.y) <= 0.01;
     }
 
     private void OnMove(InputValue movementValue) 
@@ -59,5 +60,24 @@ public class PlayerMovement : MonoBehaviour
     private void OnJump(InputValue jumpValue)
     {
         tryJump = jumpValue.Get<float>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "Player")
+        {
+            isGrounded = true;
+
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+
+        if (other.tag == "Player")
+        {
+            isGrounded = false;
+
+        }
     }
 }
