@@ -65,6 +65,7 @@ public class WebController2D : MonoBehaviour
         }
         curDistance += moveDirection * Time.deltaTime;
         curDistance = Mathf.Max(0, curDistance);
+        curDistance = Mathf.Min(curDistance, maxWebDistance);
 
         web.distance = curDistance;
         webVisual.SetPosition(0, transform.position);
