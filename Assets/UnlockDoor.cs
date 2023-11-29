@@ -19,10 +19,18 @@ public class UnlockDoor : MonoBehaviour
         {
             //Open the door when the number of keys is met
             this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
-            SceneManager.LoadScene("TestStage");
         }
     }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
 
+        if (keyRequired <= 0)
+        {
+            //Open the door when the number of keys is met
+            SceneManager.LoadScene("TestStage2");
+        }
+    }
     public void unlock(int nkeys)
     {
         keyRequired -= nkeys;
