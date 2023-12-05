@@ -5,20 +5,16 @@ using UnityEngine.UI;
 using TMPro;
 public class CollectKey : MonoBehaviour
 {
-    private int nkeys = 0;
-    //[SerializeField] private Canvas textCanvas;
-  //  TextMeshPro keysText; 
+    public TextMeshProUGUI keysText; 
+    private static int numberOfKeys = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-     /*  if(textCanvas != null)
+        if(keysText == null)
         {
-            keysText = textCanvas.transform.Find("Text").GetComponent<TextMeshPro>();
-            if(keysText == null)
-            {
-                Debug.Log("No text found");
-            }
-        }*/
+            Debug.Log("No text found");
+        }
     }
 
     // Update is called once per frame
@@ -29,24 +25,21 @@ public class CollectKey : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collided");
         //collide with a player + hasn't been picked up
         if (other.tag == "Key")
         {
-            nkeys += 1; //collect the key
-            Debug.Log("Found Key");
+            numberOfKeys += 1; //collect the key
             Destroy(other.gameObject);
-            //keysText.text = "Keys: " + nkeys; 
-           
+            keysText.text = "Keys: " + numberOfKeys;           
         }
         
         if(other.tag == "Door")
         {
             //use keys 
-            other.gameObject.GetComponent<UnlockDoor>().unlock(nkeys);
+            other.gameObject.GetComponent<UnlockDoor>().unlock(numberOfKeys);
             //reset keys
-            nkeys = 0;
-      
+            numberOfKeys = 0;
+            keysText.text = "Keys: " + numberOfKeys;
         }
     }
 }
