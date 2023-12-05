@@ -25,6 +25,7 @@ public class makeParent : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+
         if (other.tag == "Player" )
         {
             other.transform.SetParent(null);
