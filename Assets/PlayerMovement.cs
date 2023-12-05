@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private bool CheckGrounded()
     {
-        return isGrounded || Mathf.Abs(rb.velocity.y) <= 0.01;
+        return  transform.parent != null|| Mathf.Abs(rb.velocity.y) <= 0.01;
     }
 
     private void OnMove(InputValue movementValue)
