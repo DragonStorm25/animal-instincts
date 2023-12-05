@@ -516,19 +516,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
-      propertyPath: web
-      value: 
-      objectReference: {fileID: 1683485740}
-    - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: maxWebDistance
-      value: 3.5
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 36684253}
     - target: {fileID: 7607637191689336440, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
       propertyPath: m_RootOrder
@@ -584,38 +574,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336441, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336442, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.13695192
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336442, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: -0.027390368
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336443, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: jumpForce
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336443, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: moveForce
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607637191689336446, guid: 57017986c9337406ea0dd698f8c29763,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57017986c9337406ea0dd698f8c29763, type: 3}
+--- !u!20 &36684253 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6568558686306205950, guid: 57017986c9337406ea0dd698f8c29763,
+    type: 3}
+  m_PrefabInstance: {fileID: 36684252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &379225730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4181,12 +4147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keysText: {fileID: 0}
   getKeySound: {fileID: 0}
---- !u!231 &1683485740 stripped
-SpringJoint2D:
-  m_CorrespondingSourceObject: {fileID: 7607637191689336442, guid: 57017986c9337406ea0dd698f8c29763,
-    type: 3}
-  m_PrefabInstance: {fileID: 36684252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751056333
 GameObject:
   m_ObjectHideFlags: 0
