@@ -198,6 +198,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
         type: 3}
+      propertyPath: despawnEffect
+      value: 
+      objectReference: {fileID: 4314111654400738159, guid: 6af62e4c9e56c4fa5938024d8fd2f52d,
+        type: 3}
+    - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
+        type: 3}
       propertyPath: _objectToDisplay
       value: 
       objectReference: {fileID: 1975993567}
@@ -511,6 +517,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
         type: 3}
+      propertyPath: despawnEffect
+      value: 
+      objectReference: {fileID: 4314111654400738159, guid: 6af62e4c9e56c4fa5938024d8fd2f52d,
+        type: 3}
+    - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
+        type: 3}
       propertyPath: _objectToDisplay
       value: 
       objectReference: {fileID: 1888467969}
@@ -712,6 +724,12 @@ PrefabInstance:
       propertyPath: spawnEffect
       value: 
       objectReference: {fileID: 4314111654400738159, guid: c926faee32a914015bdc395905c774ac,
+        type: 3}
+    - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
+        type: 3}
+      propertyPath: despawnEffect
+      value: 
+      objectReference: {fileID: 4314111654400738159, guid: 6af62e4c9e56c4fa5938024d8fd2f52d,
         type: 3}
     - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
         type: 3}
@@ -10470,6 +10488,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
         type: 3}
+      propertyPath: despawnEffect
+      value: 
+      objectReference: {fileID: 4314111654400738159, guid: 6af62e4c9e56c4fa5938024d8fd2f52d,
+        type: 3}
+    - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
+        type: 3}
       propertyPath: _objectToDisplay
       value: 
       objectReference: {fileID: 159316912}
@@ -12517,6 +12541,12 @@ PrefabInstance:
       propertyPath: spawnEffect
       value: 
       objectReference: {fileID: 4314111654400738159, guid: c926faee32a914015bdc395905c774ac,
+        type: 3}
+    - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
+        type: 3}
+      propertyPath: despawnEffect
+      value: 
+      objectReference: {fileID: 4314111654400738159, guid: 6af62e4c9e56c4fa5938024d8fd2f52d,
         type: 3}
     - target: {fileID: 2315511619287650035, guid: 5940e10179718ef49b4181f7129230a8,
         type: 3}
