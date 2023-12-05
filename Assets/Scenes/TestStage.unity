@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc0dddef29382478b1af3612b70e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keysText: {fileID: 1805818067}
 --- !u!1001 &223808632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11710,7 +11711,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Keys : 0'
+  m_text: 'Keys: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88003508be39e449cb51c48494e680cf, type: 2}
   m_sharedMaterial: {fileID: 21699584260080902, guid: 88003508be39e449cb51c48494e680cf,
@@ -11720,8 +11721,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4286051071
+  m_fontColor: {r: 1, g: 0.94770336, b: 0.4669811, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11774,7 +11775,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -106.92615, w: 0}
+  m_margin: {x: 0, y: 0, z: -82.49179, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -12304,6 +12305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc0dddef29382478b1af3612b70e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keysText: {fileID: 1805818067}
 --- !u!1001 &2315511619862792114
 PrefabInstance:
   m_ObjectHideFlags: 0
