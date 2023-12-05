@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sprite;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
+    private float mass;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
             web = GetComponent<WebController2D>();
         }
         sprite = GetComponent<SpriteRenderer>();
+        mass = rb.mass;
     }
 
     // Update is called once per frame
@@ -36,15 +38,39 @@ public class PlayerMovement : MonoBehaviour
         {
             tryJump = 0;
         }
-        rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
-    }
+        if (transform.parent == null)
+        {
+            rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
+        }
+        else
+        {
+            List<float> x = transform.parent.GetComponent<PlayerMovement>().getMovementValues();
+            float parentMass = transform.parent.GetComponent<PlayerMovement>().getMass();
 
+            rb.AddForce(new Vector2((x[0] * x[1])/parentMass*mass + movementX * moveForce, x[2]/parentMass*mass + appliedJumpForce));
+        }
+    }
+    public List<float> getMovementValues()
+    {
+        float appliedJumpForce = tryJump > 0 && CheckGrounded() ? jumpForce : 0;
+        List<float>  v = new List<float>();
+        v.Add(movementX);
+        v.Add(moveForce);
+        v.Add(appliedJumpForce);
+        return v;
+
+    }
+    public float getMass()
+    {
+        return mass; 
+
+    }
     private bool CheckGrounded()
     {
         return isGrounded || Mathf.Abs(rb.velocity.y) <= 0.01;
     }
 
-    private void OnMove(InputValue movementValue) 
+    private void OnMove(InputValue movementValue)
     {
         movementX = movementValue.Get<float>();
         if (movementX > 0)
@@ -62,21 +88,21 @@ public class PlayerMovement : MonoBehaviour
         tryJump = jumpValue.Get<float>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnColliderEnter2D(Collider2D other)
     {
-
-        if (other.tag == "Player")
+        if (other.tag == "Player" && other.name == "Spider")
         {
             isGrounded = true;
+            other.transform.SetParent(transform);
 
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnColliderExit2D(Collider2D other)
     {
-
-        if (other.tag == "Player")
+        if (other.tag == "Player" &&  other.name == "Spider")
         {
             isGrounded = false;
+            other.transform.SetParent(null);
 
         }
     }
