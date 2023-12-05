@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded = false;
     public bool hasWeb;
     private SpriteRenderer sprite;
+    public AudioSource getKeySound;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
     private float mass;
@@ -34,16 +35,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float appliedJumpForce = tryJump > 0 && CheckGrounded() ? jumpForce : 0;
+        
         if (tryJump > 0) 
         {
             tryJump = 0;
         }
         if (transform.parent == null)
         {
+            if(appliedJumpForce > 0){
+             getKeySound.Play();
+            }
             rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
         }
         else
         {
+            if(appliedJumpForce > 0){
+             getKeySound.Play();
+            }
             //if parented (on top of other), also follow parent 
             List<float> x = transform.parent.GetComponent<PlayerMovement>().getMovementValues();
             float parentMass = transform.parent.GetComponent<PlayerMovement>().getMass();
