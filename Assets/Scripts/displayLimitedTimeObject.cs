@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class displayLimitedTimeObject : MonoBehaviour
+public class DisplayLimitedTimeObject : MonoBehaviour
 {
     public ParticleSystem spawnEffect;
     public ParticleSystem despawnEffect;
