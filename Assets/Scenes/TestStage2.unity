@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyRequired: 0
+  nextStage: 
 --- !u!212 &25780787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1446,7 +1447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1596,6 +1597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc0dddef29382478b1af3612b70e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keysText: {fileID: 0}
+  getKeySound: {fileID: 0}
 --- !u!4 &840936744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
@@ -2021,21 +2024,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.9208055
-      objectReference: {fileID: 0}
-    - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2130449
-      objectReference: {fileID: 0}
-    - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.98449886
-      objectReference: {fileID: 0}
-    - target: {fileID: 5369257838751195892, guid: 191af4866458147f9bfa6de373264fc2,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.77
       objectReference: {fileID: 0}
@@ -2084,10 +2072,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5369257838751195893, guid: 191af4866458147f9bfa6de373264fc2,
+    - target: {fileID: 5948517558002807434, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444848159630760299, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 191af4866458147f9bfa6de373264fc2, type: 3}
@@ -4298,9 +4291,9 @@ RectTransform:
   m_Father: {fileID: 570717001}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -230, y: 225}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1591306234
@@ -4323,7 +4316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Keys : 0'
+  m_text: 'Keys: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 88003508be39e449cb51c48494e680cf, type: 2}
   m_sharedMaterial: {fileID: 21699584260080902, guid: 88003508be39e449cb51c48494e680cf,
@@ -4358,8 +4351,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4419,6 +4412,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97dc0dddef29382478b1af3612b70e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keysText: {fileID: 0}
+  getKeySound: {fileID: 0}
 --- !u!231 &1683485740 stripped
 SpringJoint2D:
   m_CorrespondingSourceObject: {fileID: 7607637191689336442, guid: 57017986c9337406ea0dd698f8c29763,
