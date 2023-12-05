@@ -59,13 +59,10 @@ public class displayLimitedTimeObject : MonoBehaviour
                 for (int y = 0; y < bounds.size.y; y++) {
                     TileBase tile = allTiles[x + y * bounds.size.x];
                     Vector3Int localPlace = (new Vector3Int(x, y, (int) tilemap.transform.position.y));
-                    Vector3 place = tilemap.layoutGrid.CellToWorld(localPlace);
+                    Vector3 place = tilemap.GetCellCenterWorld(localPlace) + bounds.position;
                     if (tile != null) {
-                        Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
-                        Debug.Log(place);
+                        Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name + " place: " + place);
                         Instantiate(particle, place, new Quaternion(1, 0, 0, 0));
-                    } else {
-                        Debug.Log("x:" + x + " y:" + y + " tile: (null)");
                     }
                 }
             } 
