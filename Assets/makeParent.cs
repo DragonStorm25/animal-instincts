@@ -17,8 +17,7 @@ public class makeParent : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collided");
-        if (other.tag == "Player" && other.name == "Spider")
+        if (other.tag == "Player")
         {
             other.transform.SetParent(transform.parent);
 
@@ -26,8 +25,7 @@ public class makeParent : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Exit");
-        if (other.tag == "Player" && other.name == "Spider")
+        if (other.tag == "Player" )
         {
             other.transform.SetParent(null);
 

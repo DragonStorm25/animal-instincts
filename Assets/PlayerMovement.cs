@@ -44,10 +44,11 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            //if parented (on top of other), also follow parent 
             List<float> x = transform.parent.GetComponent<PlayerMovement>().getMovementValues();
             float parentMass = transform.parent.GetComponent<PlayerMovement>().getMass();
-
-            rb.AddForce(new Vector2((x[0] * x[1])/parentMass*mass + movementX * moveForce, appliedJumpForce));
+            float scaledParentForce = (x[0] * x[1])/parentMass*mass;
+            rb.AddForce(new Vector2(scaledParentForce + movementX * moveForce, appliedJumpForce));
         }
     }
     public List<float> getMovementValues()
