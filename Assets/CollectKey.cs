@@ -6,8 +6,8 @@ using TMPro;
 public class CollectKey : MonoBehaviour
 {
     public TextMeshProUGUI keysText; 
-    private int nkeys = 0;
-    //[SerializeField] private Canvas textCanvas;
+    private static int nkeys = 0;
+
     // Start is called before the first frame update
     void Start()
     {
