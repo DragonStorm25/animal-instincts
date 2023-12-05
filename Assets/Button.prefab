@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf48787a9814444e9bc1f0a441521f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnEffect: {fileID: 4314111654400738159, guid: c926faee32a914015bdc395905c774ac,
+    type: 3}
+  despawnEffect: {fileID: 4314111654400738159, guid: 6af62e4c9e56c4fa5938024d8fd2f52d,
+    type: 3}
   _duration: 10
   _objectToDisplay: {fileID: 0}
 --- !u!60 &2315511619287650032
