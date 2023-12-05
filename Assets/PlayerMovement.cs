@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             List<float> x = transform.parent.GetComponent<PlayerMovement>().getMovementValues();
             float parentMass = transform.parent.GetComponent<PlayerMovement>().getMass();
 
-            rb.AddForce(new Vector2((x[0] * x[1])/parentMass*mass + movementX * moveForce, x[2]/parentMass*mass + appliedJumpForce));
+            rb.AddForce(new Vector2((x[0] * x[1])/parentMass*mass + movementX * moveForce, appliedJumpForce));
         }
     }
     public List<float> getMovementValues()
