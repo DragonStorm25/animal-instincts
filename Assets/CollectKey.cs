@@ -8,7 +8,6 @@ public class CollectKey : MonoBehaviour
     public TextMeshProUGUI keysText; 
     private static int numberOfKeys = 0;
     public AudioSource getKeySound;
-    public AudioSource getKeySound;
 
     // Start is called before the first frame update
     void Start()
