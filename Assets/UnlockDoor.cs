@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UnlockDoor : MonoBehaviour
 {
-    [SerializeField] private int keyRequired; 
+    [SerializeField] private int keyRequired;
+    [SerializeField] private string nextStage; 
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class UnlockDoor : MonoBehaviour
         if (keyRequired <= 0)
         {
             //Open the door when the number of keys is met
-            SceneManager.LoadScene("TestStage2");
+            SceneManager.LoadScene(nextStage);
         }
     }
     public void unlock(int nkeys)
