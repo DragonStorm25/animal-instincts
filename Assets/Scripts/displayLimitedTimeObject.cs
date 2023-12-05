@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class displayLimitedTimeObject : MonoBehaviour
 {
     public ParticleSystem spawnEffect;
+    public ParticleSystem despawnEffect;
     [SerializeField] private float _duration = 10;
     [SerializeField] private GameObject _objectToDisplay;
 
@@ -32,6 +33,7 @@ public class displayLimitedTimeObject : MonoBehaviour
             {
                 isActive = false;
                 _objectToDisplay.SetActive(false);
+                DoParticleEffect(despawnEffect);
             }
         }
     }
@@ -43,26 +45,30 @@ public class displayLimitedTimeObject : MonoBehaviour
             isActive = true;
             timeLeft = _duration;
             _objectToDisplay.SetActive(true);
-            Tilemap tilemap = _objectToDisplay.GetComponent<Tilemap>();
-            if(tilemap != null) {
-                BoundsInt bounds = tilemap.cellBounds;
-                TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
+            DoParticleEffect(spawnEffect);
+        }
+    }
 
-                for (int x = 0; x < bounds.size.x; x++) {
-                    for (int y = 0; y < bounds.size.y; y++) {
-                        TileBase tile = allTiles[x + y * bounds.size.x];
-                        Vector3Int localPlace = (new Vector3Int(x, y, (int) tilemap.transform.position.y));
-                        Vector3 place = tilemap.layoutGrid.CellToWorld(localPlace);
-                        if (tile != null) {
-                            Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
-                            Debug.Log(place);
-                            Instantiate(spawnEffect, place, new Quaternion(1, 0, 0, 0));
-                        } else {
-                            Debug.Log("x:" + x + " y:" + y + " tile: (null)");
-                        }
+    private void DoParticleEffect(ParticleSystem particle) {
+        Tilemap tilemap = _objectToDisplay.GetComponent<Tilemap>();
+        if(tilemap != null) {
+            BoundsInt bounds = tilemap.cellBounds;
+            TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
+
+            for (int x = 0; x < bounds.size.x; x++) {
+                for (int y = 0; y < bounds.size.y; y++) {
+                    TileBase tile = allTiles[x + y * bounds.size.x];
+                    Vector3Int localPlace = (new Vector3Int(x, y, (int) tilemap.transform.position.y));
+                    Vector3 place = tilemap.layoutGrid.CellToWorld(localPlace);
+                    if (tile != null) {
+                        Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
+                        Debug.Log(place);
+                        Instantiate(particle, place, new Quaternion(1, 0, 0, 0));
+                    } else {
+                        Debug.Log("x:" + x + " y:" + y + " tile: (null)");
                     }
-                } 
-            }
+                }
+            } 
         }
     }
 
