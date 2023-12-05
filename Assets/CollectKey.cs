@@ -6,7 +6,7 @@ using TMPro;
 public class CollectKey : MonoBehaviour
 {
     public TextMeshProUGUI keysText; 
-    private static int nkeys = 0;
+    private static int numberOfKeys = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +28,9 @@ public class CollectKey : MonoBehaviour
         //collide with a player + hasn't been picked up
         if (other.tag == "Key")
         {
-            nkeys += 1; //collect the key
+            numberOfKeys += 1; //collect the key
             Destroy(other.gameObject);
-            keysText.text = "Keys: " + nkeys;
+            keysText.text = "Keys: " + numberOfKeys;
             //keysText.text = "Keys: " + nkeys; 
            
         }
@@ -38,10 +38,10 @@ public class CollectKey : MonoBehaviour
         if(other.tag == "Door")
         {
             //use keys 
-            other.gameObject.GetComponent<UnlockDoor>().unlock(nkeys);
+            other.gameObject.GetComponent<UnlockDoor>().unlock(numberOfKeys);
             //reset keys
-            nkeys = 0;
-            keysText.text = "Keys: " + nkeys;
+            numberOfKeys = 0;
+            keysText.text = "Keys: " + numberOfKeys;
         }
     }
 }
