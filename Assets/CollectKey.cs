@@ -30,9 +30,7 @@ public class CollectKey : MonoBehaviour
         {
             numberOfKeys += 1; //collect the key
             Destroy(other.gameObject);
-            keysText.text = "Keys: " + numberOfKeys;
-            //keysText.text = "Keys: " + nkeys; 
-           
+            keysText.text = "Keys: " + numberOfKeys;           
         }
         
         if(other.tag == "Door")
