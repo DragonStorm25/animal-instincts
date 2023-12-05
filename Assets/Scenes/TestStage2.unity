@@ -509,6 +509,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3696785594817266512, guid: 57017986c9337406ea0dd698f8c29763,
+        type: 3}
+      propertyPath: keysText
+      value: 
+      objectReference: {fileID: 1591306234}
     - target: {fileID: 7607637191689336419, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
       propertyPath: m_Name
@@ -1436,26 +1441,6 @@ PrefabInstance:
       objectReference: {fileID: 392156495}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5940e10179718ef49b4181f7129230a8, type: 3}
---- !u!1 &840936735 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5369257838751195887, guid: 191af4866458147f9bfa6de373264fc2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1086581133}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &840936736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 840936735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97dc0dddef29382478b1af3612b70e4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keysText: {fileID: 0}
-  getKeySound: {fileID: 0}
 --- !u!1 &907988619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1730,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3060725513510302009, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: keysText
+      value: 
+      objectReference: {fileID: 1591306234}
     - target: {fileID: 5369257838751195887, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
       propertyPath: m_Name
@@ -4127,26 +4117,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591306232}
   m_CullTransparentMesh: 1
---- !u!1 &1683485737 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7607637191689336419, guid: 57017986c9337406ea0dd698f8c29763,
-    type: 3}
-  m_PrefabInstance: {fileID: 36684252}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1683485738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683485737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97dc0dddef29382478b1af3612b70e4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keysText: {fileID: 0}
-  getKeySound: {fileID: 0}
 --- !u!1 &1751056333
 GameObject:
   m_ObjectHideFlags: 0
