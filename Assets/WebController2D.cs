@@ -47,7 +47,6 @@ public class WebController2D : MonoBehaviour
             
             RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
             float distance = Vector3.Distance(worldPosition, transform.position);
-            Debug.Log("distance spider-click : " + distance);
 
             if (hit.collider != null && hit.collider.gameObject.tag == "WebTarget" && distance <= maxWebLength)
             {
