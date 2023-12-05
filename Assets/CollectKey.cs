@@ -7,6 +7,7 @@ public class CollectKey : MonoBehaviour
 {
     public TextMeshProUGUI keysText; 
     private static int numberOfKeys = 0;
+    public AudioSource getKeySound;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,8 @@ public class CollectKey : MonoBehaviour
         {
             numberOfKeys += 1; //collect the key
             Destroy(other.gameObject);
-            keysText.text = "Keys: " + numberOfKeys;           
+            keysText.text = "Keys: " + numberOfKeys;
+            getKeySound.Play();
         }
         
         if(other.tag == "Door")

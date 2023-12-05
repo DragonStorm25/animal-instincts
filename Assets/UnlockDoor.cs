@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UnlockDoor : MonoBehaviour
 {
-    [SerializeField] private int keyRequired; 
+    [SerializeField] private int keyRequired;
+    [SerializeField] private string nextStage; 
+    private int count = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +26,21 @@ public class UnlockDoor : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (keyRequired <= 0)
+        if(other.tag == "Player"){
+            count += 1;
+        }
+        if (keyRequired <= 0 && count == 2)
         {
             //Open the door when the number of keys is met
-            SceneManager.LoadScene("TestStage2");
+            SceneManager.LoadScene(nextStage);
         }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player"){
+            count -= 1;
+        }
+        //player leaves the door area
     }
     public void unlock(int nkeys)
     {
