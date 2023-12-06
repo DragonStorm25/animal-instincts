@@ -16862,7 +16862,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1920033542}
     - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
       propertyPath: maxWebLength
@@ -17388,6 +17388,12 @@ MonoBehaviour:
   m_UseImpactDirection: 0
   m_ScaleImpactWithMass: 0
   m_ScaleImpactWithSpeed: 0
+--- !u!20 &1920033542 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6568558686306205950, guid: 57017986c9337406ea0dd698f8c29763,
+    type: 3}
+  m_PrefabInstance: {fileID: 1195841765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2001317804
 GameObject:
   m_ObjectHideFlags: 0
