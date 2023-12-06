@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource getKeySound;
     [SerializeField] private float moveForce = 7f;
     [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float maxSpeed = 14f;
     private float mass;
 
     // Start is called before the first frame update
@@ -58,6 +59,11 @@ public class PlayerMovement : MonoBehaviour
             float scaledParentForce = (x[0] * x[1])/parentMass*mass;
             rb.AddForce(new Vector2(scaledParentForce + movementX * moveForce, appliedJumpForce));
         }
+        capSpeed();
+    }
+    private void capSpeed(){
+        float newSpeedX = Mathf.Min(maxSpeed, rb.velocity.x);
+        rb.velocity = new Vector2(newSpeedX, rb.velocity.y);
     }
     public List<float> getMovementValues()
     {
