@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class startGame : MonoBehaviour
 {
     public void startTutorial(){
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("Clicked");
-         SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+         //SceneManager.LoadScene("Tutorial");
     }
 }
