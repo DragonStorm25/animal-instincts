@@ -9855,7 +9855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyRequired: 2
-  nextStage: 
+  nextStage: EndGame
 --- !u!50 &477234247
 Rigidbody2D:
   serializedVersion: 4
