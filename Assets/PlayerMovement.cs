@@ -42,14 +42,14 @@ public class PlayerMovement : MonoBehaviour
         }
         if (transform.parent == null)
         {
-            if(appliedJumpForce > 0){
-             getKeySound.Play();
+            if(appliedJumpForce > 0 && getKeySound != null){
+                getKeySound.Play();
             }
             rb.AddForce(new Vector2(movementX * moveForce, appliedJumpForce));
         }
         else
         {
-            if(appliedJumpForce > 0){
+            if(appliedJumpForce > 0 && getKeySound != null){
              getKeySound.Play();
             }
             //if parented (on top of other), also follow parent 
