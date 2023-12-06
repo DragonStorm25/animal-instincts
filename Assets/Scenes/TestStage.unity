@@ -11374,6 +11374,11 @@ PrefabInstance:
       objectReference: {fileID: 1816739824}
     - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
+      propertyPath: maxWebLength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607637191689336437, guid: 57017986c9337406ea0dd698f8c29763,
+        type: 3}
       propertyPath: maxWebDistance
       value: 3.5
       objectReference: {fileID: 0}
@@ -11431,6 +11436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607637191689336443, guid: 57017986c9337406ea0dd698f8c29763,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7607637191689336443, guid: 57017986c9337406ea0dd698f8c29763,
         type: 3}
@@ -11535,6 +11545,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5369257838751195895, guid: 191af4866458147f9bfa6de373264fc2,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5369257838751195895, guid: 191af4866458147f9bfa6de373264fc2,
         type: 3}
