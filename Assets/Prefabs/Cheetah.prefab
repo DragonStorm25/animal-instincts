@@ -183,7 +183,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &5369257838751195891
 BoxCollider2D:
@@ -278,8 +278,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasWeb: 0
+  getKeySound: {fileID: 0}
   moveForce: 7
   jumpForce: 400
+  maxSpeed: 14
 --- !u!114 &970372242654469483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keysText: {fileID: 0}
+  getKeySound: {fileID: 0}
 --- !u!1 &8039002339514778156
 GameObject:
   m_ObjectHideFlags: 0

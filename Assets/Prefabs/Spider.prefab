@@ -303,7 +303,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &7607637191689336447
 BoxCollider2D:
@@ -401,6 +401,7 @@ MonoBehaviour:
   getKeySound: {fileID: 0}
   moveForce: 0.3
   jumpForce: 25
+  maxSpeed: 14
 --- !u!114 &7607637191689336437
 MonoBehaviour:
   m_ObjectHideFlags: 0
