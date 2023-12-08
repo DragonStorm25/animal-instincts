@@ -29,9 +29,11 @@ public class WebController2D : MonoBehaviour
         webVisual.endColor = lineColor;
         webVisual.startWidth = 0.1f;
         webVisual.endWidth = 0.1f;
+        
         Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
         webVisual.material = whiteDiffuseMat;
         webVisual.material.color = lineColor;
+        webVisual.material.renderQueue = 3000;
         isWebConnected = false;
      
     }
