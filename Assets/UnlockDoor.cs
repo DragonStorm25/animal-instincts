@@ -20,7 +20,7 @@ public class UnlockDoor : MonoBehaviour
         if(keyRequired <= 0)
         {
             //Open the door when the number of keys is met
-            this.GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+            this.GetComponent<Renderer>().material.SetColor("_Color", Color.black);
         }
     }
     
