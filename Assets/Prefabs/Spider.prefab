@@ -822,7 +822,7 @@ MonoBehaviour:
   web: {fileID: 7607637191689336442}
   currentLength: 0
   lineColor: {r: 0, g: 0, b: 0, a: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 6568558686306205950}
   maxWebLength: 3
 --- !u!231 &7607637191689336442
 SpringJoint2D:
